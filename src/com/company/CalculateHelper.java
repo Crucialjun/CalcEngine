@@ -1,6 +1,10 @@
 package com.company;
 
 public class CalculateHelper {
+    private  static final char ADD_SYMBOL ='+';
+    private  static final char SUBSTRACT_SYMBOL ='-';
+    private  static final char MULTIPLY_SYMBOL ='*';
+    private  static final char DIVIDE_SYMBOL ='/';
     MathCommand command;
     double leftValue,rightValue,result;
 
@@ -44,6 +48,41 @@ public class CalculateHelper {
             command = MathCommand.Multiply;
         else if(commandString.equalsIgnoreCase(MathCommand.Divide.toString()))
             command = MathCommand.Divide;
+
+    }
+
+    @Override
+    public String toString() {
+       //1.0 + 2.0 = 3.0
+
+        char symbol = ' ';
+
+        switch (command){
+            case Add:
+                symbol = ADD_SYMBOL;
+                break;
+            case Substract:
+                symbol = SUBSTRACT_SYMBOL;
+                break;
+            case Multiply:
+                symbol = MULTIPLY_SYMBOL;
+                break;
+            case Divide:
+                symbol = DIVIDE_SYMBOL;
+                break;
+
+        }
+        StringBuilder sb = new StringBuilder(20);
+        sb.append(leftValue);
+        sb.append(' ');
+        sb.append(symbol);
+        sb.append(' ');
+        sb.append(rightValue);
+        sb.append(" = ");
+        sb.append(result);
+
+        return sb.toString();
+
 
     }
 }
