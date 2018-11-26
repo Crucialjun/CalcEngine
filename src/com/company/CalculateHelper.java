@@ -5,7 +5,7 @@ public class CalculateHelper {
     private  static final char SUBSTRACT_SYMBOL ='-';
     private  static final char MULTIPLY_SYMBOL ='*';
     private  static final char DIVIDE_SYMBOL ='/';
-    MathCommand command;
+    private MathCommand command;
     double leftValue,rightValue,result;
 
     public void process(String statement){
