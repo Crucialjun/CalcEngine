@@ -4,6 +4,7 @@ import com.company.Adder;
 import com.company.CalculateBase;
 import com.company.CalculateHelper;
 import com.company.Divider;
+import com.company.InvalidStatementException;
 import com.company.MathEquation;
 import com.company.Multiplier;
 import com.company.Substracter;
