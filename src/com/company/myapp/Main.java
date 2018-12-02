@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
 //        useMathEquation();
 //        useCalculatorBase();
+        // useCalculateHelper();
 
         String[] statements = {
                 "add 1.0",      //Error incorent number of values
@@ -40,6 +41,19 @@ public class Main {
         }
 
 
+    }
+
+    private static void useCalculateHelper() {
+        String[] statements = {
+                "add 1.0",      //Error incorent number of values
+                "add xx 25.0",  //Error: Non Numeric data
+                "addX 0.0 0.0", // Error invalid command
+                "divide 100.0 50.0", //100.0 / 50.0 = 2.0
+                "add 25.0 92.0",    //
+                "substract 225.0 17.0",
+                "multiply 11.0 3.0"
+
+        };
     }
 
     private static void useCalculatorBase() {
