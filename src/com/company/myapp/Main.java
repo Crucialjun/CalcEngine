@@ -1,13 +1,6 @@
 package com.company.myapp;
 
-import com.company.Adder;
-import com.company.CalculateBase;
-import com.company.CalculateHelper;
-import com.company.Divider;
-import com.company.InvalidStatementException;
-import com.company.MathEquation;
-import com.company.Multiplier;
-import com.company.Substracter;
+import com.company.*;
 
 public class Main {
 
@@ -17,27 +10,18 @@ public class Main {
         // useCalculateHelper();
 
         String[] statements = {
-                "add 1.0",      //Error incorent number of values
-                "add xx 25.0",  //Error: Non Numeric data
-                "addX 0.0 0.0", // Error invalid command
-                "divide 100.0 50.0", //100.0 / 50.0 = 2.0
                 "add 25.0 92.0",    //
-                "substract 225.0 17.0",
-                "multiply 11.0 3.0"
 
         };
 
-        CalculateHelper helper = new CalculateHelper();
+        DynamicHelper helper = new DynamicHelper(new MathProcessing[]{
+                new Adder()
+        });
+
 
         for (String statement:statements) {
-            try {
-                helper.process(statement);
-                System.out.println(helper);
-            }catch (InvalidStatementException e){
-                System.out.println(e.getMessage());
-                if(e.getCause() != null)
-                    System.out.println(" Original Exception: " + e.getCause().getMessage());
-            }
+            String output = helper.process(statement);
+            System.out.println(output);
         }
 
 
