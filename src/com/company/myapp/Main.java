@@ -11,11 +11,13 @@ public class Main {
 
         String[] statements = {
                 "add 25.0 92.0",    //
+                "power 5.0 2.0"     // 5.0 ^ 2.0 = 25.0
 
         };
 
         DynamicHelper helper = new DynamicHelper(new MathProcessing[]{
-                new Adder()
+                new Adder(),
+                new PowerOf()
         });
 
 
